@@ -25,10 +25,10 @@
       <div class="list__row">
         <div class="list__item">
           <p class="bold">
-            <?= $assignment['courseName'] ?>
+            <?= "{$assignment['courseName']}" ?>
           </p>
           <p>
-            <?= $assignment['Description'] ?>
+            <?= $assignment['Description']; ?>
           </p>
         </div>
         <div class="list__removeItem">
@@ -61,7 +61,7 @@
       <select name="course_id" required>
         <option value="">Please Select</option>
         <?php foreach ($courses as $course): ?>
-          <option value="<>= $course['courseID']; ?>">
+          <option value="<?= $course['courseID']; ?>">
             <?= $course['courseName']; ?>
           </option>
         <?php endforeach; ?>

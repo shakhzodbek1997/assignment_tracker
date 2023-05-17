@@ -1,6 +1,6 @@
 <?php 
   require('model/database.php');
-  require('model/assignments_db.php');
+  require('model/assignment_db.php');
   require('model/course_db.php');
 
   $assignment_id = filter_input(INPUT_POST, 'assignment_id', FILTER_VALIDATE_INT);
