@@ -7,7 +7,7 @@
       <input type="hidden" name="action" value="list_assignments">
       <select name="course_id" required>
         <option value="0">View All</option>
-        <?php foreach ($course as $course): ?>
+        <?php foreach ($courses as $course): ?>
           <?php if ($course_id == $course['courseID']) { ?>
             <option value="<?= $course['courseID'] ?>" selected>
             <?php } else { ?>
