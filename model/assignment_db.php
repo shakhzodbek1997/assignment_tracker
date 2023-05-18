@@ -1,13 +1,16 @@
 <?php
+    // Retrieve assignments by course ID
     function get_assignments_by_course($course_id) {
       global $db;
       if($course_id){
+        // If a specific course ID is provided, retrieve assignments for that course
         $query = '
           SELECT A.ID, A.Description, C.courseName FROM assignments
           A LEFT JOIN courses C ON A.courseID = C.courseID  
           WHERE A.courseID = :course_id ORDER BY ID
         ';
       }else {
+        // If no course ID is provided, retrieve assignments for all courses
         $query = '
           SELECT A.ID, A.Description, C.courseName FROM assignments
           A LEFT JOIN courses C ON A.courseID = C.courseID  
@@ -25,6 +28,7 @@
       return $assignments;
     }
 
+    // Delete an assignment by assignment ID
     function delete_assignment($assignment_id){
       global $db;
       $query = '
@@ -37,6 +41,7 @@
     }
 
     
+     // Add a new assignment with the specified course ID and description
     function add_assignment($course_id, $description){
       global $db;
       $query = '

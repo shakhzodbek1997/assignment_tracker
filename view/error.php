@@ -1,7 +1,9 @@
 <?php include('header.php') ?>
 <h2>Error</h2>
+
+<!-- This line displays the error message stored in the $error variable -->
 <p>
-  <?php echo $error ?>
+  <?php echo $error ?> 
 </p>
 
 <br>

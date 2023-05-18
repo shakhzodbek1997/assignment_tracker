@@ -1,4 +1,5 @@
 <?php 
+  // Retrieve all courses from the database
   function get_courses() {
     global $db;
     $query = ' 
@@ -10,7 +11,9 @@
     return $courses;
   }
 
+  // Retrieve the name of a course by its ID
   function get_course_name($course_id){
+    // If no course ID is provided, return "All Courses"
     if(!$course_id){
       return "All Courses";
     }
@@ -27,6 +30,7 @@
     return $course_name;
   }
 
+  // Delete a course by its ID
   function delete_course($course_id){
     global $db;
     $query = '
@@ -38,6 +42,7 @@
     $statement->closeCursor();
   }
 
+  // Add a new course with the specified name
   function add_course($course_name){
     global $db;
     $query = 'INSERT INTO courses (courseName) VALUES (:courseName)';

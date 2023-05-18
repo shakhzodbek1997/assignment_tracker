@@ -13,6 +13,7 @@
         </p>
       </div>
       <div class="list__removeItem">
+        <!-- Form for deleting a course -->
         <form action="." method="post">
           <input 
             type="hidden" 
@@ -36,6 +37,7 @@
 
 <section id="add" class="add">
   <h2>Add Course</h2>
+  <!-- Form for adding a new course -->
   <form 
     action="."
     method="post" 

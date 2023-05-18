@@ -3,6 +3,7 @@
 <section id="list" class="list">
   <header class="list__row list__header">
     <h1>Assignments</h1>
+     <!-- Form for selecting a course to filter assignments -->
     <form action="." method="get" id="list__header_select" class="list__header_select">
       <input type="hidden" name="action" value="list_assignments">
       <select name="course_id" required>
@@ -20,6 +21,8 @@
       <button class="add-button bold">Go</button>
     </form>
   </header>
+
+  <!-- If assignments exist, display them -->
   <?php if ($assignments) { ?>
     <?php foreach ($assignments as $assignment): ?>
       <div class="list__row">
@@ -32,6 +35,7 @@
           </p>
         </div>
         <div class="list__removeItem">
+          <!-- Form for deleting an assignment -->
           <form action="." method="post">
             <input type="hidden" name="action" value="delete_assignment">
             <input type="hidden" name="assignment_id" value="<?= $assignment['ID'] ?>">
@@ -39,9 +43,10 @@
           </form>
         </div>
       </div>
-
     <?php endforeach; ?>
+
   <?php } else { ?>
+    <!-- If no assignments exist, display appropriate message -->
     <br>
     <?php if ($course_id) { ?>
       <p>No assignments exist for this course yet. </p>
@@ -54,6 +59,7 @@
 
 <section id="add" class="add">
   <h2>Add Assignment</h2>
+  <!-- Form for adding a new assignment -->
   <form action="." method="post" id="add__form" class="add__form">
     <input type="hidden" name="action" value="add_assignment">
     <div class="add__inputs">
